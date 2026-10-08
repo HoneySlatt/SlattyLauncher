@@ -90,13 +90,12 @@ mesure avec une très grande bibliothèque, mise à l'échelle fractionnaire, ma
 
 ## Inconnues dominantes
 
-- Rotation du refresh token lors d'un renouvellement (`slatty auth probe-rotation`) ; acceptation d'un POST sur `/token`.
+- ~~Rotation du refresh token~~ : vérifié, pas de rotation, l'ancien jeton reste accepté [V]. Acceptation d'un POST sur `/token` : non testé.
 - Sémantique du hash `aadd86936a80ee8a369579c3926f1b3c` : ni contenu vide ni gzip vide ; entrées ignorées comme gogdl.
 - Envoi conditionnel (`If-Match`) non connu : une modification distante arrivant entre la relecture et l'envoi
   est écrasée (fenêtre de l'ordre de la durée d'un envoi ; test `residual_window_after_fresh_listing_is_not_detected`).
 - Décompression des téléchargements cloud : supposée signalée par `Content-Encoding: gzip`.
 - Service factice `GalaxyCommunication.exe` non géré en P0 (Kingdom Come, Cuphead, DOOM 3 en ont besoin).
-- Jeton requis par `gameplay.gog.com/.../achievements`.
 - User-Agent Galaxy nécessaire ou non pour `cloudstorage.gog.com` (repris de gogdl par prudence).
 
 ## Dépendances non Rust
