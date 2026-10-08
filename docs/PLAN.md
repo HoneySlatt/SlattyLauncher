@@ -65,11 +65,28 @@ Modules du cœur : `auth`, `account`, `credentials`, `http`, `db`, `library`, `g
 5. `slatty cloud status|sync` : aller-retour réel vérifié par SHA-256, sauvegarde locale créée, dossier vide → aucune suppression.
 6. Achievement obtenu en jouant, visible ensuite sur le compte GOG.
 
+### État P0 (code terminé, essais réels à faire — voir `docs/P0-essais.md`)
+
+Vérifié localement :
+- Superviseur : double fork, `setsid`, arrêt sur demande (tests automatisés) ; essai réel umu + Proton-CachyOS
+  dans un préfixe jetable, depuis `$HOME` et avec un dossier de travail sur `/NAS` [V].
+- umu (`waitforexitandrun`) attend déjà les processus Windows détachés ; le subreaper reste un filet de sécurité [V].
+- pressure-vessel ne voit pas les dossiers hors des chemins partagés (ex. `/tmp/nix-shell.*`) ;
+  `STEAM_COMPAT_INSTALL_PATH` est défini comme Heroic le fait [V].
+- Import Heroic en lecture seule sur Tomb Raider, Undertale, DOOM (2016) [V].
+- Moteur cloud : 20 scénarios simulés (conflits, suppressions, réseau, compte, dossier déplacé, casse, évasion de chemin, verrou) [V, simulé].
+- Comet : jetons hors argv, fichier supprimé dès l'écoute, arrêt par SIGINT, nettoyage (faux jetons) [V].
+
+Non vérifié contre GOG : tout le reste (connexion, bibliothèque, cloud réel, achievements).
+
 ## Inconnues dominantes
 
-- Rotation du refresh token lors d'un renouvellement ; acceptation d'un POST sur `/token`.
-- Sémantique du hash `aadd86936a80ee8a369579c3926f1b3c` (pierre tombale ?) dans le cloud.
-- Envoi conditionnel (`If-Match`) non connu : fenêtre de course résiduelle entre relecture et envoi.
+- Rotation du refresh token lors d'un renouvellement (`slatty auth probe-rotation`) ; acceptation d'un POST sur `/token`.
+- Sémantique du hash `aadd86936a80ee8a369579c3926f1b3c` : ni contenu vide ni gzip vide ; entrées ignorées comme gogdl.
+- Envoi conditionnel (`If-Match`) non connu : une modification distante arrivant entre la relecture et l'envoi
+  est écrasée (fenêtre de l'ordre de la durée d'un envoi ; test `residual_window_after_fresh_listing_is_not_detected`).
+- Décompression des téléchargements cloud : supposée signalée par `Content-Encoding: gzip`.
+- Service factice `GalaxyCommunication.exe` non géré en P0 (Kingdom Come, Cuphead, DOOM 3 en ont besoin).
 - Jeton requis par `gameplay.gog.com/.../achievements`.
 - User-Agent Galaxy nécessaire ou non pour `cloudstorage.gog.com` (repris de gogdl par prudence).
 
