@@ -88,6 +88,14 @@ démarrage réel vérifié sous niri (Wayland).
 Non fait : liste des téléchargements (rien à télécharger avant M3), paramètres, import depuis l'interface,
 mesure avec une très grande bibliothèque, mise à l'échelle fractionnaire, manette.
 
+### Ajout au périmètre : gestion manuelle des achievements (demandée le 2026-10-09)
+
+`slatty achievements <id> --unlock|--unlock-all|--clear` et boutons Débloquer / Réinitialiser / Tout débloquer
+dans la fiche de jeu, pour tout jeu possédé (installé ou non). Mécanisme [C, Comet + gog_achievements] :
+`POST gameplay.gog.com/clients/{client}/users/{user}/achievements/{id}` avec `{"date_unlocked": date|null}`,
+jeton du client Galaxy du jeu. Confirmation obligatoire avant toute écriture. Visible sur le profil public,
+probablement contraire aux conditions de GOG. Ne remplace pas le critère P0 (achievement obtenu en jouant via Comet).
+
 ## Inconnues dominantes
 
 - ~~Rotation du refresh token~~ : vérifié, pas de rotation, l'ancien jeton reste accepté [V]. Acceptation d'un POST sur `/token` : non testé.
