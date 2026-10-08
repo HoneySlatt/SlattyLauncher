@@ -9,7 +9,7 @@ Préparation :
 cd ~/Projects/SlattyLauncher
 nix develop
 cargo build
-alias slatty=$PWD/target/debug/slatty
+# `nix develop` puts target/debug in PATH: `slatty` and `slatty-gui` are available after `cargo build`.
 slatty doctor
 ```
 
