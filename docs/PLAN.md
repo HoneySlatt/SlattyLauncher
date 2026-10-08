@@ -79,6 +79,15 @@ Vérifié localement :
 
 Non vérifié contre GOG : tout le reste (connexion, bibliothèque, cloud réel, achievements).
 
+### État M2 (premier jet)
+
+Interface Iced : connexion (navigateur + collage), bibliothèque avec recherche et jaquettes en cache disque,
+fiche de jeu, Jouer/Arrêter via le même flux que la CLI, état cloud (vérifier, synchroniser, garder local/cloud),
+achievements lus sur GOG, Tab / Maj+Tab / Échap. Tests sans affichage (`iced_test`) avec données marquées « [FICTIF] » ;
+démarrage réel vérifié sous niri (Wayland).
+Non fait : liste des téléchargements (rien à télécharger avant M3), paramètres, import depuis l'interface,
+mesure avec une très grande bibliothèque, mise à l'échelle fractionnaire, manette.
+
 ## Inconnues dominantes
 
 - Rotation du refresh token lors d'un renouvellement (`slatty auth probe-rotation`) ; acceptation d'un POST sur `/token`.
