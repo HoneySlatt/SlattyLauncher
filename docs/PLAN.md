@@ -94,7 +94,7 @@ mesure avec une très grande bibliothèque, mise à l'échelle fractionnaire, ma
 - Sémantique du hash `aadd86936a80ee8a369579c3926f1b3c` : ni contenu vide ni gzip vide ; entrées ignorées comme gogdl.
 - Envoi conditionnel (`If-Match`) non connu : une modification distante arrivant entre la relecture et l'envoi
   est écrasée (fenêtre de l'ordre de la durée d'un envoi ; test `residual_window_after_fresh_listing_is_not_detected`).
-- Décompression des téléchargements cloud : supposée signalée par `Content-Encoding: gzip`.
+- ~~Décompression des téléchargements cloud~~ : vérifiée sur Tomb Raider [V].
 - Service factice `GalaxyCommunication.exe` non géré en P0 (Kingdom Come, Cuphead, DOOM 3 en ont besoin).
 - User-Agent Galaxy nécessaire ou non pour `cloudstorage.gog.com` (repris de gogdl par prudence).
 
