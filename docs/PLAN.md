@@ -96,6 +96,16 @@ dans la fiche de jeu, pour tout jeu possédé (installé ou non). Mécanisme [C,
 jeton du client Galaxy du jeu. Confirmation obligatoire avant toute écriture. Visible sur le profil public,
 probablement contraire aux conditions de GOG. Ne remplace pas le critère P0 (achievement obtenu en jouant via Comet).
 
+### État M3 (code terminé, essai réel à faire)
+
+`slatty install` et section Installation de l'interface : build Windows génération 2, jeu de base, une langue.
+Téléchargement dans `.<dossier>.slatty-partial`, MD5 compressé et décompressé par morceau, publication par
+`rename` uniquement si tout est vérifié, reprise par revérification, tâche persistée (`install_jobs`),
+espace disque vérifié, chemins dangereux refusés, annulation. Préfixe créé par `wineboot` au premier lancement
+(vérifié réellement avec Proton-CachyOS). 11 tests simulés de l'installateur [V, simulé].
+Non géré : fichiers « support » (scripts d'installation GOG, dont d'éventuelles clés de registre), redistribuables,
+DLC, liens symboliques, conteneurs « small files » sans morceaux, mises à jour, réparation, désinstallation.
+
 ## Inconnues dominantes
 
 - ~~Rotation du refresh token~~ : vérifié, pas de rotation, l'ancien jeton reste accepté [V]. Acceptation d'un POST sur `/token` : non testé.

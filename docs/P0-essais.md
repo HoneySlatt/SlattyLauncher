@@ -83,3 +83,23 @@ slatty launch 1724969043
 Attendu en fin de session : « Achievement unlocked on GOG: … ». Puis vérifier sur le profil GOG
 (site web) que l'achievement apparaît. `~/.local/state/slatty/logs/comet.log` aide en cas d'échec
 (il peut contenir des identifiants de jeu : ne pas le publier tel quel).
+
+## 7. Installation (M3) puis achievement via Comet
+
+Lecture seule d'abord (rien n'est téléchargé) :
+
+```bash
+slatty install <id> --info
+```
+
+Première installation (le choix de Proton et du dossier est mémorisé) :
+
+```bash
+slatty install <id> --proton "$HOME/.local/share/Steam/compatibilitytools.d/Proton-CachyOS Latest" --dir "$HOME/Games/GOG"
+```
+
+À vérifier : Ctrl+C met en pause, la même commande reprend sans tout retélécharger, le dossier final
+n'apparaît qu'à la fin. Puis `slatty launch <id>` : création du préfixe, cloud, Comet, jeu ; jouer jusqu'à
+un achievement et vérifier « Achievement unlocked on GOG ».
+
+Un jeu déjà importé depuis Heroic doit d'abord être oublié (`slatty forget <id>`, aucun fichier supprimé).
