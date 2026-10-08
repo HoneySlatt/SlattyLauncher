@@ -14,3 +14,4 @@ Une ligne par essai réel contre GOG. Un essai simulé ne figure jamais ici.
 | 2026-10-08 | Tomb Raider (1724969043) | 1.0 | Windows | — | Cloud, envoi (`--prefer local`) | OK | Version cloud précédente conservée dans les sauvegardes ; `cloud status` après envoi encore à vérifier |
 | 2026-10-08 | Undertale (1456487183) | 1.08 | Windows | — | Cloud | Non testable | Aucune sauvegarde ni en local ni dans le cloud |
 | 2026-10-09 | Hollow Knight (1308320804) | — | (non lancé) | — | Déblocage manuel d'achievement | OK | `--unlock NEGLECT` accepté ; relu sur gameplay.gog.com avec la date du déblocage (UTC) |
+| 2026-10-09 | Tomb Raider, DOOM (2016), Horizon Zero Dawn, Cyberpunk 2077 | builds Windows gén. 2 | — | — | `slatty install --info` (builds + métadonnées) | OK | Tailles lues : 16,5 / 61,9 / 71,4 / 59,9 Gio de téléchargement |
