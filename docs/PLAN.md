@@ -11,6 +11,8 @@ Légende : **[V]** vérifié (code lu ou test exécuté) · **[C]** documentatio
 | Sujet | Décision |
 |---|---|
 | Licence | GPL-3.0-or-later (reprise possible de logique gogdl/Heroic, GPL-3.0, avec attribution) |
+| Interface | Iced 0.14, confirmé le 2026-10-09 face à GPUI : stabilité et maintenance prioritaires (GPUI sans version stable, dépendance à des copies hebdomadaires republiées par un tiers) ; pages riches via les widgets markdown/table/sensor d'Iced ; manette plus tard via gilrs |
+| Langue de l'interface | anglais ; autres langues plus tard |
 | Connexion | navigateur externe, l'utilisateur colle l'URL finale (`embed.gog.com/on_login_success?...code=`) — seul mécanisme vérifié sans WebView |
 | Jetons | trousseau système (`keyring` v4 → Secret Service) ; sans trousseau : erreur explicite, jamais de fichier en clair |
 | Runner | `umu-run` + Proton déjà présent ; préfixe par jeu, réutilisation possible d'un préfixe Heroic (Heroic jamais modifié) |
