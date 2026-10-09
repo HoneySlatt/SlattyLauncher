@@ -17,3 +17,4 @@ Une ligne par essai réel contre GOG. Un essai simulé ne figure jamais ici.
 | 2026-10-09 | Tomb Raider, DOOM (2016), Horizon Zero Dawn, Cyberpunk 2077 | builds Windows gén. 2 | — | — | `slatty install --info` (builds + métadonnées) | OK | Tailles lues : 16,5 / 61,9 / 71,4 / 59,9 Gio de téléchargement |
 | 2026-10-09 | Undertale (1456487183) | 1.08 | Windows / umu + Proton-CachyOS, préfixe slatty | 0.3.2 | Installation Galaxy v2 complète | OK | 126 Mio téléchargés, 221 fichiers vérifiés, 1 fichier support ignoré, 1 min 38 |
 | 2026-10-09 | Undertale (1456487183) | 1.08 | Windows / umu + Proton-CachyOS | 0.3.2 | Premier lancement (préfixe, cloud, Comet, session) | OK | Préfixe créé, cloud vide, Comet démarré, fin de session détectée ; pause/reprise non testées |
+| 2026-10-09 | Undertale (1456487183) | 1.08 | Windows | — | `slatty verify` (lecture seule) | OK | 221/221 fichiers intacts, contrôlés contre le build installé |
